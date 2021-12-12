@@ -25,11 +25,12 @@ body {
     position: relative;
     width: 100%;
     list-style: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+
 }
 .navigation ul li :hover { 
     background: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 .navigation ul li a {
     position: relative;

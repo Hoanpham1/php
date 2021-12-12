@@ -144,7 +144,7 @@ body {
   
   @media screen and (max-width: 580px) {
     .menu {
-      padding: 20px 10px !important;
+      padding: 20x 10px !important;
     }
     .menu .search-container {
       float: none;

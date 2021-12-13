@@ -51,17 +51,18 @@
                 </div>
             </div>
         </div>
+        <!-- table -->
         <div class="details">
-            <div class="recentOrders">
+            <div class="productOrders">
                 <div class="cardHeader">
-                    <h2>san pham hot</h2>
+                    <h2>TOP MẶT HÀNG</h2>
                 </div>
                 <table>
                     <thead>
                         <tr>
                             <td>TÊN</td>
                             <td>GIÁ(VNĐ)</td>
-                            <td>HÃNG</td>
+                            <td>SỐ LƯỢNG BÁN</td>
                             <td>TRẠNG THÁI</td>
                         </tr>
                     </thead>
@@ -70,7 +71,7 @@
                         <tr>
                             <td>Đồng hồ a</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>100</td>
                             <td><span class="status0">Hết hàng</span></td>
                         </tr>
                     </tbody>
@@ -78,7 +79,7 @@
                         <tr>
                             <td>Đồng hồ b</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>90</td>
                             <td><span class="status1">Còn hàng</span></td>
                         </tr>
                     </tbody>
@@ -86,7 +87,7 @@
                         <tr>
                             <td>Đồng hồ c</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>80</td>
                             <td><span class="status0">Hết hàng</span></td>
                         </tr>
                     </tbody>
@@ -94,7 +95,7 @@
                         <tr>
                             <td>Đồng hồ d</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>70</td>
                             <td><span class="status1">Còn hàng</span></td>
                         </tr>
                     </tbody>
@@ -102,7 +103,7 @@
                         <tr>
                             <td>wibu</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>60</td>
                             <td><span class="status1">Còn hàng</span></td>
                         </tr>
                     </tbody>
@@ -110,7 +111,7 @@
                         <tr>
                             <td>đồng hồ wibu</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>50</td>
                             <td><span class="status1">Còn hàng</span></td>
                         </tr>
                     </tbody>
@@ -118,7 +119,7 @@
                         <tr>
                             <td>đòng hồ e</td>
                             <td>120</td>
-                            <td>wibu</td>
+                            <td>40</td>
                             <td><span class="status0">Hết hàng</span></td>
                         </tr>
                     </tbody>

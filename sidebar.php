@@ -6,7 +6,7 @@
                     <span class="icon">
                         <ion-icon name="watch-outline"></ion-icon>
                     </span>
-                    <span class="title">S2SHOP</span>
+                    <span class="title">S2STORE</span>
                 </a>
             </li>
             <li>

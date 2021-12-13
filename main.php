@@ -10,6 +10,7 @@
                 </label>
             </div>
             <div class="user">
+                <div class="userName">Simp</div>
                 <img src="user.jpg" alt="">
             </div>
         </div>

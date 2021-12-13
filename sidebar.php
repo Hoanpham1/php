@@ -4,6 +4,14 @@
             <li>
                 <a href="#">
                     <span class="icon">
+                        <ion-icon name="watch-outline"></ion-icon>
+                    </span>
+                    <span class="title">S2SHOP</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
                     <span class="title">Chung</span>
@@ -41,9 +49,6 @@
                     <span class="title">Cài đặt</span>
                 </a>
             </li>
-
     </div>
 </div>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

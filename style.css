@@ -179,8 +179,8 @@
       background: pink;
   }
   .cardBox .card:hover .number,
-  .cardBox .card:hover .number,
-  .cardBox .card:hover .number {
+  .cardBox .card:hover .cardName,
+  .cardBox .card:hover .iconBox {
       color: white;
   }
   /* detail */
@@ -227,18 +227,9 @@
   .details .productOrders table tr td {
       padding: 10px;
   }
-  .details .productOrders table tr td:nth-child(1) {
-      text-align: center;
-  }
-  .details .productOrders table tr td:nth-child(2) {
-      text-align: center;
-  }
-  .details .productOrders table tr td:nth-child(3) {
-      text-align: center;
-  }
-  .details .productOrders table tr td:nth-child(4) {
-      text-align: center;
-  }
+  .details .productOrders table tr td {
+        text-align: center;
+    }
   .status1 {
       padding: 2px 4px;
       background: greenyellow;

